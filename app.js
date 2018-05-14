@@ -19,7 +19,8 @@ var camgroundRoutes     = require("./routes/campgrounds"),
 
 
 
-mongoose.connect("mongodb://localhost/yelpcamp_final");
+//mongoose.connect("mongodb://localhost/yelpcamp_final");
+mongoose.connect("mongodb://chuks:chuks2018@ds035844.mlab.com:35844/yelpcamp");
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
