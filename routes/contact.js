@@ -37,7 +37,7 @@ router.post("/", function(req, res) {
         });
         
          var mailOptions = {
-            from: req.body.email,
+            from: 'evaristus.ihezurumba@gmail.com',
             to: 'evaristus.ihezurumba@gmail.com',
             replyTo: req.body.email,
             subject: "Let's Camp contact request from: " + req.body.name,
