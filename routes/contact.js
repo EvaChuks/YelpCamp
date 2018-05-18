@@ -4,7 +4,7 @@ var router              = express.Router();
 var request             = require("request");
 
 
-//var mailgun = require("mailgun-js");
+var mailgun = require("mailgun-js");
 var api_key = process.env.MAILGUN_API_KEY;
 var DOMAIN = process.env.MAILGUN_DOMAIN;
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: DOMAIN});
@@ -54,9 +54,15 @@ router.post("/", function(req, res) {
       mailgun.messages().send(data, function (error, body) {
         if(error) {
           console.log(error);
+          req.flash("error", "Something went wrong... Please try again later!")
+          res.redirect("/contact");
+        } else {
+          console.log(body);
+          req.flash("success", "Your email has been sent, we will respond within 24 hours.");
+         res.redirect("/campgrounds");
         }
 
-         console.log(body);
+         
         });
         // var smtpTransport = nodemailer.createTransport({
         //     service: 'Gmail', 
