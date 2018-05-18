@@ -44,10 +44,10 @@ router.post("/", function(req, res) {
       
 
      var data = {
-       from: name + " - " + email, // Email and name from the variables
-       to: process.env.EMAIL,
+       from: 'chuks <walter4chuks@gmail.com>', //name + " - " + email, // Email and name from the variables
+       to: 'evaristus.ihezurumba@gmail.com', //process.env.EMAIL,
        subject: subject,
-       message: message,
+       text: message,
        phone: phone
       };
 
