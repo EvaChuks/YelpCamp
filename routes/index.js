@@ -70,13 +70,14 @@ router.post("/register", upload.single('image'), function(req, res) {
     var email   = req.body.email;
     var image  = req.body.image;
     var imageId = req.body.imageId;
+    var message = message;
     if(req.body.adminCode === '27-05-1981'){
         newUser.isAdmin = true;
     }
      cloudinary.uploader.upload(req.file.path, function (result) {
     image = result.secure_url;
     imageId= result.public_id;
-    newUser = {username: username, firstName: firstName, lastName: lastName, email: email,image: image, imageId: imageId};
+    newUser = {username: username, firstName: firstName, lastName: lastName, email: email,image: image, imageId: imageId, message: message};
     User.register(newUser, req.body.password,  function(err, user){
         if(err || !user){
     console.log(err);
