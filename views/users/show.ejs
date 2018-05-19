@@ -1,29 +1,50 @@
 <% include ../partials/header %>
 
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-4">
 			
 		<div class="thumbnail">
-			<img src="<%= user.image %>" alt="user profile image">
+			<img class="img-circle img-responsive" src="<%= user.image %>" alt="user profile image">
 		</div>
+		<ul class="list-group">
+            <li class="list-group-item"><p>EMAIL ID: <a href="mailto:<%= user.email %>"><%= user.email %></a></p></li>
+            </ul>
+            </div>
+         <div class="col-md-8">
 		<div class="panel panel-info">
 		 <div class="panel-heading">
-		 	<h3 class="panel-title"><%= user.firstName %>Profile</h3>
+		 	<h3 class="panel-title"><span>Profile Name:</span><%= user.firstName %></h3>
 		 	</div>
 		 	<div class="panel-body">
               <p><%= user.message %></p>
            </div>
-           <ul class="list-group">
-            <li class="list-group-item"><p>EMAIL ID: <a href="mailto:<%= user.email %>"><%= user.email %></a></p></li>
-            </ul>
+           
+		</div>
 		</div>
 		
 	</div>
+	<div class="row">
 	<div class="col-md-8">
 		<h3><%= user.username %>'s campgrounds:</h3>
 		<ul>
 		<% campgrounds.forEach(function(campground) { %>
-			<li><a href="/campgrounds/<%= campground.id %>"><%= campground.name %></a></li>
+		<div class="col-md-3 col-sm-6">
+        <div class="thumbnail">
+        	 <div class="thumbnail">
+            <div class="image-thumb" style="background-image: url(<%= campground.image %>)"></div>
+           
+           <div class="caption">
+             <h4><%= campground.name %></h4>
+             </div>
+             <p>
+               <a href="/campgrounds/<%=campground._id %>" class="btn btn-primary">more info</a>  
+             </p>
+             
+           
+          
+        </div>
+      </div>
+			<!--<li><a href="/campgrounds/<%= campground.id %>"><%= campground.name %></a></li>-->
 		<% }); %>
 		</ul>
 	</div>

@@ -70,7 +70,7 @@ router.post("/register", upload.single('image'), function(req, res) {
     var email   = req.body.email;
     var image  = req.body.image;
     var imageId = req.body.imageId;
-    var message = message;
+    var message = req.body.message;
     if(req.body.adminCode === '27-05-1981'){
         newUser.isAdmin = true;
     }
