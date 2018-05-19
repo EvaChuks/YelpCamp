@@ -1,7 +1,13 @@
 <% include ../partials/header %>
 
 <div class="row">
-	<div class="col-md-3">
+	<div class="col-md-8">
+	  <h3><span>Profile Name:</span><%= user.firstName %></h3>
+	    <div class="descriptions">
+		 <%= user.descriptions %>
+		</div>
+		</div>
+	     <div class="col-md-4">
 			
 		<div class="thumbnail">
 			<img class="img-circle img-responsive" src="<%= user.image %>" alt="user profile image">
@@ -10,12 +16,7 @@
             <li class="list-group-item"><p>EMAIL ID: <a href="mailto:<%= user.email %>"><%= user.email %></a></p></li>
             </ul>
             </div>
-         <div class="col-md-9">
-		  <h3><span>Profile Name:</span><%= user.firstName %></h3>
-		<div class="descriptions">
-			<%= user.descriptions %>
-		</div>
-		</div>
+         
 		
 	</div>
 	<div class="row">
