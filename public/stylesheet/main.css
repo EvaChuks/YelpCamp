@@ -27,9 +27,5 @@ body {
     width: 100%;
 }
 #profile {
-    text-align: center;
     text-transform: uppercase;
-}
-.thumbnail .caption {
-    padding: 0;
 }
