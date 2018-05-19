@@ -4,25 +4,32 @@
     <div style="width: 30%; margin: 25px auto;">
         <form action="/register" method="post" enctype="multipart/form-data">
             <div class="form-group">
+                <label class="" for="form_username">Profile Name</label>
                 <input class="form-control" type="text" name="username" placeholder="username">
             </div>
             <div class="form-group">
+                <label class="" for="form_password">Password</label>
                 <input class="form-control" type="password" name="password" placeholder="password">
             </div>
             <div class="form-group">
+                <label class="" for="form_firstName">First name</label>
                     <input class="form-control" type="text" name="firstName" placeholder="first name">
                 </div>
                 <div class="form-group">
+                    <label class="" for="form_lastName">Last name</label>
                     <input class="form-control" type="text" name="lastName" placeholder="last name">
                 </div>
                 <div class="form-group">
+                    <label class="" for="form_email">Email</label>
                     <input class="form-control" type="email" name="email" placeholder="your@email.com">
                 </div>
                 <div class="form-group">
+                    <label class="" for="form_image">Profile Photo</label>
                     <input type="file" id="image" name="image" accept="image/*" required>
                 </div>
+             <div class="form-group">    
              <label class="" for="form_message">Tell About Yourself</label>
-            <textarea class="form-control" id="form_message" name="message" placeholder="Enter Message Here" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+            <textarea class="form-control" id="form_message" name="message" placeholder="Enter Message Here" rows="3" required="required" data-error="Please, leave us a message."></textarea>
             <div class="help-block with-errors"></div>
           </div>
             <div class="form-group">
