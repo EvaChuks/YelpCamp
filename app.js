@@ -20,7 +20,6 @@ var camgroundRoutes     = require("./routes/campgrounds"),
 
 console.log(process.env.DATABASEURL);
 mongoose.connect(process.env.DATABASEURL);
-//mongoose.connect("mongodb://chuks:chuks2018@ds035844.mlab.com:35844/yelpcamp");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
